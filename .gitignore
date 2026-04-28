@@ -1,0 +1,17 @@
+# Сырые медицинские данные — НЕ КОММИТИТЬ
+raws/*.xlsx
+raws/*.docx
+
+# Python
+__pycache__/
+*.py[cod]
+.env
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Лишние файлы
+=0.0.9

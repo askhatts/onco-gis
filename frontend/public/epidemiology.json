@@ -1,0 +1,54 @@
+{
+  "indicators": [
+    {
+      "id": "incidence_rate",
+      "label": "Заболеваемость",
+      "unit": "на 100 тыс.",
+      "color": "#00c4ce",
+      "polarity": "negative"
+    },
+    {
+      "id": "mortality_rate",
+      "label": "Смертность",
+      "unit": "на 100 тыс.",
+      "color": "#e85050",
+      "polarity": "negative"
+    },
+    {
+      "id": "mortality_ratio",
+      "label": "Смертность/заболеваемость",
+      "unit": "%",
+      "color": "#e8a020",
+      "polarity": "negative"
+    },
+    {
+      "id": "early_stage_pct",
+      "label": "Ранняя диагностика",
+      "unit": "%",
+      "color": "#27c97a",
+      "polarity": "positive"
+    },
+    {
+      "id": "early_stage_count",
+      "label": "Впервые 0–I ст.",
+      "unit": "чел.",
+      "color": "#00a89e",
+      "polarity": "positive"
+    },
+    {
+      "id": "advanced_stage_pct",
+      "label": "Запущенность",
+      "unit": "%",
+      "color": "#e85050",
+      "polarity": "negative"
+    },
+    {
+      "id": "survival_5yr_pct",
+      "label": "5-лет. выживаемость",
+      "unit": "%",
+      "color": "#3a8ff4",
+      "polarity": "positive"
+    }
+  ],
+  "data": []
+}
