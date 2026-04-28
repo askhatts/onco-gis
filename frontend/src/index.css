@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #05101d;
+  --bg1: #081525;
+  --bg2: #0c1d30;
+  --bg3: #10233a;
+  --bg4: #162c47;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-hi: rgba(0, 200, 210, 0.22);
+  --cyan: #00c4ce;
+  --cyan-d: rgba(0, 196, 206, 0.14);
+  --teal: #00a89e;
+  --blue: #3a8ff4;
+  --amber: #e8a020;
+  --amber-d: rgba(232, 160, 32, 0.13);
+  --ok: #27c97a;
+  --err: #e85050;
+  --t1: #cddae8;
+  --t2: #5d7a94;
+  --t3: #2e4a61;
+  --sans: 'IBM Plex Sans', sans-serif;
+  --mono: 'IBM Plex Mono', monospace;
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-md: 14px;
+  --fs-lg: 16px;
+  --fs-xl: 22px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  color: var(--t1);
+  font-family: var(--sans);
+  font-size: var(--fs-sm);
+  -webkit-font-smoothing: antialiased;
+}
+
+button, select, input, textarea {
+  font: inherit;
+}
+
+.leaflet-container {
+  background: var(--bg) !important;
+  font-family: var(--sans);
+}
+
+.leaflet-control-zoom,
+.leaflet-control-attribution {
+  display: none;
+}
+
+.leaflet-pane {
+  z-index: 1;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--t3);
+  border-radius: 3px;
+}

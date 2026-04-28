@@ -177,12 +177,12 @@ async def upload_screening(
 
 @app.get("/api/template/epidemiology")
 async def template_epidemiology():
-    path = RAWS / "template_epidemiology.xlsx"
+    path = RAWS / "template_epidemiology-quarterly.xlsx"
     if not path.exists():
         run_script("process_epidemiology.py")
     if not path.exists():
         raise HTTPException(404, "Template not found")
-    return FileResponse(str(path), filename="template_epidemiology.xlsx",
+    return FileResponse(str(path), filename="template_epidemiology-quarterly.xlsx",
                         media_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet")
 
 

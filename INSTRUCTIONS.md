@@ -88,7 +88,38 @@ http://localhost:8080/app.html
 
 ---
 
-## 7. Обновление данных без перезапуска сервера
+## 7. Современный frontend для локальной разработки (опционально)
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Открыть:
+
+```
+http://localhost:5173
+```
+
+> В этом режиме backend должен быть запущен локально на `http://localhost:8080`.
+
+---
+
+## 8. Docker Compose (опционально)
+
+```bash
+docker compose up --build
+```
+
+После запуска:
+
+- frontend: `http://localhost`
+- backend API: `http://localhost:8000`
+
+---
+
+## 9. Обновление данных без перезапуска сервера
 
 **Через веб-интерфейс (AdminPanel):**
 
@@ -109,7 +140,7 @@ python scripts/process_screening.py
 
 ---
 
-## 8. Смена пароля администратора
+## 10. Смена пароля администратора
 
 ```python
 import hashlib
@@ -129,31 +160,39 @@ ADMIN_PASSWORD_HASH="вставить_хеш_сюда" python -m uvicorn backend
 
 ---
 
-## 9. Структура проекта
+## 11. Структура проекта
 
 ```
 Webapp/
 ├── backend/
 │   ├── main.py              # FastAPI сервер
+│   ├── Dockerfile
 │   └── requirements.txt
 ├── frontend/
+│   ├── src/                 # React/Vite интерфейс
+│   ├── Dockerfile
+│   ├── package.json
 │   └── public/
 │       ├── app.html         # HTML-оболочка
-│       ├── app.jsx          # Весь React-код (Babel CDN)
+│       ├── app.jsx          # Legacy React-код (Babel CDN)
 │       ├── abay_districts.geojson
 │       └── *.json           # Генерируются скриптами
 ├── raws/                    # Сырые данные (НЕ в git)
 │   └── *.xlsx
+├── geodata/                 # Исходные shape-файлы для районов
 ├── scripts/
 │   ├── process_screening.py
-│   └── process_epidemiology.py
+│   ├── process_epidemiology.py
+│   ├── filter_geodata.py
+│   └── requirements.txt
+├── docker-compose.yml
 ├── .gitignore
 └── INSTRUCTIONS.md
 ```
 
 ---
 
-## 10. Часто встречаемые ошибки
+## 12. Часто встречаемые ошибки
 
 | Ошибка | Причина | Решение |
 |--------|---------|---------|

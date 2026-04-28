@@ -97,13 +97,44 @@ INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8080
 ```
 
-### Шаг 8 — Открыть в браузере
+### Шаг 8 — Открыть встроенную версию в браузере
 
 Откройте браузер (Chrome, Firefox, Edge) и введите адрес:
 
 ```
 http://localhost:8080/app.html
 ```
+
+### Шаг 9 — Современный интерфейс React/Vite (опционально)
+
+Если хотите запускать новую версию интерфейса в режиме разработки:
+
+```
+cd frontend
+npm install
+npm run dev
+```
+
+После этого откройте:
+
+```
+http://localhost:5173
+```
+
+> Для Vite backend должен продолжать работать локально на `http://localhost:8080`.
+
+### Шаг 10 — Запуск через Docker Compose (опционально)
+
+Если на компьютере уже установлен Docker Desktop, можно поднять frontend и backend контейнерами:
+
+```
+docker compose up --build
+```
+
+После запуска:
+
+- интерфейс: `http://localhost`
+- API backend: `http://localhost:8000`
 
 ---
 
@@ -205,11 +236,15 @@ python scripts/process_epidemiology.py
 onco-gis/
 ├── backend/
 │   ├── main.py              # Веб-сервер (FastAPI)
+│   ├── Dockerfile           # Контейнер backend
 │   └── requirements.txt     # Зависимости сервера
 ├── frontend/
+│   ├── src/                 # Современный интерфейс React/Vite
+│   ├── Dockerfile           # Контейнер frontend
+│   ├── package.json         # Frontend-зависимости
 │   └── public/
 │       ├── app.html         # Главная страница
-│       ├── app.jsx          # Весь код интерфейса
+│       ├── app.jsx          # Встроенная legacy-версия интерфейса
 │       ├── abay_districts.geojson   # Границы районов
 │       └── *.json           # Данные (создаются скриптами)
 ├── geodata/
@@ -218,7 +253,9 @@ onco-gis/
 ├── scripts/
 │   ├── process_screening.py      # Обработка скрининга
 │   ├── process_epidemiology.py   # Обработка эпидемиологии
-│   └── filter_geodata.py         # Создание GeoJSON из shapefile
+│   ├── filter_geodata.py         # Создание GeoJSON из shapefile
+│   └── requirements.txt          # Доп. зависимости для geodata-скриптов
+├── docker-compose.yml            # Совместный запуск контейнеров
 ├── .gitignore
 └── README.md
 ```
